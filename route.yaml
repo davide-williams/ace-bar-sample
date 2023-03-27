@@ -1,0 +1,19 @@
+kind: Route
+apiVersion: route.openshift.io/v1
+metadata:
+  name: aceapp
+  namespace: ace
+  labels:
+    app: aceapp
+    app.kubernetes.io/component: aceapp
+    app.kubernetes.io/instance: aceapp
+spec:
+  to:
+    kind: Service
+    name: aceapp
+    weight: 100
+  port:
+    targetPort: 7600-tcp
+  tls:
+    termination: edge
+  wildcardPolicy: None
