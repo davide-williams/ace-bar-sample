@@ -4,7 +4,7 @@ pipeline {
     stage('Build') {
       steps {
         echo 'Building'    
-        sh 'podman build -f Dockerfile --build-arg FROMIMAGE=ace:12.0.7.0-r1 --tag image-registry.openshift-image-registry.svc:5000/ace/aceapp:latest'
+        sh 'podman build -f Dockerfile --tag image-registry.openshift-image-registry.svc:5000/ace/aceapp:latest'
       }
     }
     stage('Authentication to Registry'){
