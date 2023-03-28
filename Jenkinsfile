@@ -16,7 +16,7 @@ pipeline {
     stage('Pushing') {
       steps {
         echo 'Pushing'
-        sh 'podman push image-registry.openshift-image-registry.svc:5000/ace/aceapp:latest --tls-verify=false'
+        sh 'podman push image-registry.openshift-image-registry.svc:5000/ace/aceapp:$GIT_COMMI --tls-verify=false'
             }
     }
   }
