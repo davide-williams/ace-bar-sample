@@ -1,3 +1,4 @@
+cat <<EOF |oc apply -f -
 kind: Deployment
 apiVersion: apps/v1
 metadata:
@@ -20,7 +21,7 @@ spec:
       containers:
         - name: aceapp
           image: >-
-            image-registry.openshift-image-registry.svc:5000/ace/aceapp
+            image-registry.openshift-image-registry.svc:5000/ace/aceapp:$GIT_COMMIT
           ports:
             - containerPort: 7600
               protocol: TCP
