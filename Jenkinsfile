@@ -4,7 +4,7 @@ pipeline {
     stage('Build') {
       steps {
         echo 'Building'    
-        sh 'podman build -f Dockerfile --tag image-registry.openshift-image-registry.svc:5000/ace/aceapp:latest'
+        sh 'podman build -f Dockerfile --tag image-registry.openshift-image-registry.svc:5000/ace/aceapp:$GIT_COMMIT'
       }
     }
     stage('Authentication to Registry'){
