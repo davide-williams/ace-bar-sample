@@ -5,7 +5,7 @@ pipeline {
       steps {
         echo 'Building'    
         git url: 'https://github.com/davide-williams/ace-bar-sample.git', branch: 'master'
-        sh 'podman build -f Dockerfile --tag image-registry.openshift-image-registry.svc:5000/ace/aceapp:$GIT_COMMIT'
+        sh 'podman build -f Dockerfile --tag image-registry.openshift-image-registry.svc:5000/ais-service-demo/aceapp:$GIT_COMMIT'
       }
     }
     stage('Authentication to Registry'){
@@ -17,7 +17,7 @@ pipeline {
     stage('Pushing') {
       steps {
         echo 'Pushing'
-        sh 'podman push image-registry.openshift-image-registry.svc:5000/ace/aceapp:$GIT_COMMIT --tls-verify=false'
+        sh 'podman push image-registry.openshift-image-registry.svc:5000/ais-service-demo/aceapp:$GIT_COMMIT --tls-verify=false'
       }
     }
     stage('Application Build') {
