@@ -4,6 +4,7 @@ pipeline {
     stage('Image Build') {
       steps {
         echo 'Building'    
+        git url: 'https://github.com/davide-williams/ace-bar-sample.git', branch: 'master'
         sh 'podman build -f Dockerfile --tag image-registry.openshift-image-registry.svc:5000/ace/aceapp:$GIT_COMMIT'
       }
     }
