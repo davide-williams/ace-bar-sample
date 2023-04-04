@@ -3,7 +3,7 @@ kind: Deployment
 apiVersion: apps/v1
 metadata:
   name: aceapp
-  namespace: ace
+  namespace: ais-service-demo
   labels:
     app: aceapp
     app.kubernetes.io/component: aceapp
