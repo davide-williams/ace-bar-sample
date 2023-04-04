@@ -19,6 +19,9 @@ spec:
         deployment: aceapp
     spec:
       containers:
+      - env:
+        - name: TZ
+          value: America/New_York
         - name: aceapp
           image: >-
             image-registry.openshift-image-registry.svc:5000/ais-service-demo/aceapp:$BUILD_NUMBER
