@@ -1,4 +1,4 @@
-ARG  FROMIMAGE=cp.icr.io/cp/appc/ace:12.0.7.0-r2
+ARG  FROMIMAGE=cp.icr.io/cp/appc/ace:12.0.6.0-r1
 FROM ${FROMIMAGE}
 
 USER root
