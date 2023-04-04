@@ -21,7 +21,7 @@ spec:
       containers:
         - name: aceapp
           image: >-
-            "image-registry.openshift-image-registry.svc:5000/ace/aceapp:" echo $env.BUILD_NUMBER
+            "image-registry.openshift-image-registry.svc:5000/ace/aceapp:" echo $BUILD_NUMBER
           ports:
             - containerPort: 7600
               protocol: TCP
