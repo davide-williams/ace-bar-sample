@@ -21,7 +21,7 @@ spec:
       containers:
         - name: aceapp
           image: >-
-            image-registry.openshift-image-registry.svc:5000/ace/aceapp:$GIT_COMMIT
+            image-registry.openshift-image-registry.svc:5000/ace/aceapp:env.BUILD_NUMBER
           ports:
             - containerPort: 7600
               protocol: TCP
